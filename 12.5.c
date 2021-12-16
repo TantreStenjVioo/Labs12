@@ -2,12 +2,11 @@
 
 int main(void)
 {
-   int n;
-   printf("Год:") ;
-   scanf ("%i", &n);   
-   printf("год ");
+   int n; // Вводим год
+   printf("Год:");
+   scanf ("%i", &n); 
  
-   switch ((n)%10) {
+   switch (n % 10) { // С помощью остатка от деления разбиваем цвета на циклы
    case 0:
    case 1:
        printf("бел");
@@ -30,7 +29,7 @@ int main(void)
        break;
    }
  
-   switch ((n+1)%5) {
+   switch ((n + 1) % 5) { // Определяем окончания для цветов
    case 0:
    case 1:
    case 2:
@@ -49,7 +48,7 @@ int main(void)
        break;
    }
  
-   switch ((n+8)%12) {
+   switch ((n + 8) % 12) { // Определяем соответствующий числу год по животным
    case 0:
        printf("крысы\n");
        break;
