@@ -2,147 +2,104 @@
  
 int main(void)
 {
-   int day, month;
-   printf("day:");
-   scanf ("%i", &day);
-   printf("month:");
-   scanf("%i", &month);
+   int n; //Объявляем количество учебных заданий и вводим 
+   printf("кол-во:") ;
+   scanf ("%i", &n);
  
-   if (day <= 31)
-        switch (day) {
-        case 1:
-                printf("первое ");
-                break;
-        case 2:
-                printf("второе ");
-                break;
-        case 3:
-                printf("третье ");
-                break;
-        case 4:
-                printf("четвёртое ");
-                break;
-        case 5:
-                printf("пятое ");
-                break;
-        case 6:
-                printf("шестое ");
-                break;
-        case 7:
-                printf("седьмое ");
-                break;
-        case 8:
-                printf("восьмое ");
-                break;
-        case 9:
-                printf("девятое ");
-                break;
+   if (n /10 == 1) // С помощью условия if отдельно учитываем числа с 10 по 19
+        switch (n) {
         case 10:
-                printf("десятое ");
+                printf("десять учебных заданий.\n");
                 break;
         case 11:
-                printf("одиннадцатое ");
+                printf("одинадцать учебных заданий.\n");
                 break;
         case 12:
-                printf("двенадцатое ");
+                printf("двенадцать учебных заданий.\n");
                 break;
         case 13:
-                printf("тринадцатое ");
+                printf("тринадцать учебных заданий.\n");
                 break;
         case 14:
-                printf("четырнадцатое ");
+                printf("четырнадцать учебных заданий.\n");
                 break;
         case 15:
-                printf("пятнадцатое ");
+                printf("пятнадцать учебных заданий.\n");
                 break;
         case 16:
-                printf("шестнадцатое ");
+                printf("шестнадцать учебных заданий.\n");
                 break;
         case 17:
-                printf("семнадцатое ");
+                printf("семнадцать учебных заданий.\n");
                 break;
         case 18:
-                printf("восемнадцатое ");
+                printf("восемнадцать учебных заданий.\n");
                 break;
         case 19:
-                printf("девятнадцатое ");
-                break;
-        case 20:
-                printf("двадцатое ");
-                break;
-        case 21:
-                printf("двадцать первое ");
-                break;
-        case 22:
-                printf("двадцать второе ");
-                break;
-        case 23:
-                printf("двадцать третье ");
-                break;
-        case 24:
-                printf("двадцать четвёртое ");
-                break;
-        case 25:
-                printf("двадцать пятое ");
-                break;
-        case 26:
-                printf("двадцать шестое ");
-                break;
-        case 27:
-                printf("двадцать седьмое ");
-                break;
-        case 28:
-                printf("двадцать восьмое ");
-                break;
-        case 29:
-                printf("двадцать девятое ");
-                break;
-        case 30:
-                printf("тридцатое ");
-                break;
-        case 31:
-                printf("тридцать первое ");
+                printf("девятнадцать учебных заданий.\n");
                 break;
         }
-    if (month <= 12) {
-        switch (month) {
-            case 1:
-                printf("января");
-                break;
+    else {
+        switch (n / 10) {             // Вычисляем круглые числа при помощи целочисленного деления
             case 2:
-                printf("февраля");
+                printf("двадцать ");
                 break;
             case 3:
-                printf("марта");
+                printf("тридцать ");
                 break;
             case 4:
-                printf("апреля");
-                break;
-            case 5:
-                printf("мая");
-                break;
-            case 6:
-                printf("июня");
-                break;
-            case 7:
-                printf("июля");
-                break;
-            case 8:
-                printf("августа");
-                break;
-            case 9:
-                printf("сентября");
-                break;
-            case 10:
-                printf("октября");
-                break;
-            case 11:
-                printf("ноября");
-                break;
-            case 12:
-                printf("декабря");
+                printf("сорок ");
                 break;
         }
-    }
+ 
+        switch (n % 10) { // Вычисляем единицы при помощи остатка от деления
+        case 1:
+            printf("одно ");
+            break;
+        case 2:
+            printf("два ");
+            break;
+        case 3:
+            printf("три ");
+            break;
+        case 4:
+            printf("четыре ");
+            break;
+        case 5:
+            printf("пять ");
+            break;
+        case 6:
+            printf("шесть ");
+            break;
+        case 7:
+            printf("семь ");
+            break;
+        case 8:
+            printf("восемь ");
+            break;
+        case 9:
+            printf("девять ");
+            break;
+        }
+ 
+        switch (n % 10) {      // Сортируем по склонению последней фразы
+        case 0:
+        case 5:
+        case 6:
+        case 7:
+        case 8:
+        case 9:
+            printf("учебных заданий.\n");
+            break;
+        case 1:
+            printf("учебное задание.\n");
+            break;
+        case 2:
+        case 3:
+        case 4:
+            printf("учебных задания.\n");
+            break;
+        }
+  }
    return 0;
 }
