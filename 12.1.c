@@ -2,13 +2,13 @@
  
 int main(void)
 {
-   int day, month;
+   int day, month; // Задаём день и месяц
    printf("day:");
    scanf ("%i", &day);
    printf("month:");
    scanf("%i", &month);
  
-   if (day <= 31)
+   if (day <= 31) // В зависимости от набранного дня выводим его словесное название через цикл for
         switch (day) {
         case 1:
                 printf("первое ");
@@ -104,7 +104,7 @@ int main(void)
                 printf("тридцать первое ");
                 break;
         }
-	if (month != 0) 
+	if (month != 0) // В зависимости от набранного месяца выводим его название через цикл
         switch (month) {
             case 1:
                 printf("января");
@@ -128,13 +128,13 @@ int main(void)
                 printf("декабря");
                 break;
         }
-	if (month == 2 && day <= 28) 
+	if (month == 2 && day <= 28) // Исключение для февраля имеющего меньшее количество дней
 		switch (month) {   		
 			case 2:
                 printf("февраля");
                 break;
     		}
-    if ((month == 4 || month == 6 || month == 9 || month == 11) && day <= 30) 
+    if ((month == 4 || month == 6 || month == 9 || month == 11) && day <= 30) // Исключение для месяцев имеющих максимум 30 дней 
 		switch (month) {      
             case 4:
                 printf("апреля");
